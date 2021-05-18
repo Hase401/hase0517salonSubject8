@@ -17,12 +17,13 @@ class FirstViewController: UIViewController {
         super.viewWillAppear(animated)
         
         //appDelegate.slider0の初期値の代入も含めるため、valueの受け渡しではない
-        appDelegate.slider0 = slider1
-        sliderValueLabel.text = String(appDelegate.slider0.value)
+        slider1.value = appDelegate.value
+        sliderValueLabel.text = String(appDelegate.value)
     }
     
     @IBAction private func changeSliderValue(_ sender: UISlider) {
         //slider1をappDelegate.slider0に代入しており、classなのでvalueの受け渡しはしなくてよい
-        sliderValueLabel.text = String(appDelegate.slider0.value)
+        appDelegate.value = sender.value
+        sliderValueLabel.text = String(appDelegate.value)
     }
 }
