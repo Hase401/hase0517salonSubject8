@@ -18,13 +18,13 @@ class SecondViewController: UIViewController {
 
         //sliderの表示とvalueは連携しているため、valueプロバティのみを変えれば良い。
         //【疑問①】sliderのみの受け渡しでは、なぜ、sliderの表示が変わらないのか？
-        slider2.value = appDelegate.slider0.value
-        sliderValueLabel.text = String(slider2.value)
+        slider2.value = appDelegate.value
+        sliderValueLabel.text = String(appDelegate.value)
     }
     
     @IBAction private func changeSliderValue(_ sender: UISlider) {
         //secondでは値の下の１行、sliderの受け渡しはしてないので、valueも書かないといけない
-        appDelegate.slider0.value = sender.value
-        sliderValueLabel.text = String(appDelegate.slider0.value)
+        appDelegate.value = sender.value
+        sliderValueLabel.text = String(appDelegate.value)
     }
 }
